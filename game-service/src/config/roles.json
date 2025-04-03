@@ -1,0 +1,65 @@
+{
+    "admin": {
+        "access": [
+            "/register_operator",
+            "/update_operator",
+            "/get_operators",
+            "/delete_operator",
+            "/new_casino_view",
+            "/edit_casino_view",
+            "/delete_casino_view",
+            "/enable_brands",
+            "/disable_brands",
+            "/get_brands",
+            "/store_games",
+            "/get_brands",
+            "/get_casino_brands",
+            "/get_casino_games",
+            "/edit_games_tags",
+            "/edit_game",
+            "/add_game",
+            "/update_players",
+            "/search_players",
+            "/register_player",
+            "/api-docs",
+            "/wallet/get_transactions",
+            "/create_custom_brand",
+            "/edit_custom_brand",
+            "/delete_custom_brand"
+        ]
+    },
+    "user": {
+        "access": [
+            "/get_casino_brands",
+            "/get_casino_games",
+            "/new_casino_view",
+            "/edit_casino_view",
+            "/delete_casino_view",
+            "/update_players",
+            "/search_players",
+            "/register_player",
+            "/api-docs",
+            "/wallet/get_transactions",
+            "/create_custom_brand",
+            "/edit_custom_brand",
+            "/delete_custom_brand"
+        ]
+    },
+    "support": {
+        "access": [
+            "/enable_brands",
+            "/disable_brands",
+            "/get_brands",
+            "/new_casino_view",
+            "/edit_casino_view",
+            "/delete_casino_view",
+            "/get_casino_brands",
+            "/get_casino_games",
+            "/edit_games_tags",
+            "/edit_game",
+            "/add_game",
+            "/search_players",
+            "/wallet/get_transactions"
+        ]
+    }
+}
