@@ -1,25 +1,25 @@
 import mongoose from 'mongoose';
 import paginate from 'mongoose-paginate-v2';
 
-interface PlayerDocument extends mongoose.Document {
-  id: number;
-  extId: number;
-  name: string;
-  operatorId: number;
-  channelId: number;
-  currencies: Record<string, any>;
-  language: string;
-  lastBalance: number;
-  bet: number;
-  win: number;
-  gameHistory: any[];
-  gameStatus: string;
-  gameNext: string;
-  gameReport: number;
-}
+// interface PlayerDocument extends mongoose.Document {
+//   id: number;
+//   extId: number;
+//   name: string;
+//   operatorId: number;
+//   channelId: number;
+//   currencies: Record<string, any>;
+//   language: string;
+//   lastBalance: number;
+//   bet: number;
+//   win: number;
+//   gameHistory: any[];
+//   gameStatus: string;
+//   gameNext: string;
+//   gameReport: number;
+// }
 
 const playerSchema = new mongoose.Schema({
-  id: { type: Number, required: true, unique: true, immutable: true },
+  playerId: { type: Number, required: true, unique: true, immutable: true },
   extId: { type: Number, required: true },
   name: { type: String, required: true },
   operatorId: { type: Number, required: true },
@@ -37,7 +37,7 @@ const playerSchema = new mongoose.Schema({
 
 playerSchema.plugin(paginate);
 
-const Player = mongoose.model<PlayerDocument, mongoose.PaginateModel<PlayerDocument>>(
+const Player = mongoose.model(
   'Players',
   playerSchema
 );

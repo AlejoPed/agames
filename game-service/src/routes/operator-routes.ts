@@ -1,5 +1,5 @@
 import express from 'express'
-import { GetOperators, RegisterOperator, LoginOperator, UpdateOperator, DeleteChannel } from '../controllers/operator-controller'
+import { GetOperators, RegisterOperator, LoginOperator, UpdateOperator, DeleteOperator } from '../controllers/operator-controller'
 import { auth } from '../middlewares/auth-middleware'
 
 
@@ -13,6 +13,6 @@ router.put('/update_operator', auth, async (req: express.Request, res: express.R
 
 router.post('/login', async (req: express.Request, res: express.Response) => await LoginOperator(req, res))
 
-router.delete('/delete_operator', auth, async (req: express.Request, res: express.Response) => await DeleteChannel(req, res))
+router.put('/delete_operator', auth, async (req: express.Request, res: express.Response) => await DeleteOperator(req, res))
 
 export default router

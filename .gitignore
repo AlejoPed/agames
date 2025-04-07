@@ -1,9 +1,9 @@
-/backendts/build
-/backendts/logs/error/*
-/backendts/logs/transactions/*
-/backendts/node_modules
-/backendts/package-lock.json
-/backendts/.env
+/game-service/build
+/game-service/logs/error/*
+/game-service/logs/transactions/*
+/game-service/node_modules
+/game-service/package-lock.json
+/game-service/.env
 
 /dashboard/node_modules
 /dashboard/vendor
