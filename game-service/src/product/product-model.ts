@@ -20,6 +20,23 @@ const productSchema = new mongoose.Schema({
   win: { type: Number, required: true },
   description: { type: String, required: true },
   image: { type: String, required: true }
+},
+{
+  methods: {
+
+  },
+  statics: {
+    async externalSearch (query) {
+      const game: any = await Product.find(query).sort({ name: 1 }).collation({ locale: 'en', caseLevel: true })
+      return game.map((item: any) => {
+        return {
+          "id": item.productId,
+          "name": item.category,
+          "icon": item.image,
+        }
+      })
+    },
+  }
 });
 
 // productSchema.plugin(paginate);

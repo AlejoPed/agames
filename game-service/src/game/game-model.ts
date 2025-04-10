@@ -16,7 +16,7 @@ import mongoose from 'mongoose';
 
 const gameSchema = new mongoose.Schema({
   gameId: { type: Number, required: true, unique: true, immutable: true },
-  gameName: { type: Number, required: true, unique: true, immutable: true },
+  gameName: { type: String, required: true, unique: true, immutable: true },
   rtp: { type: Number, required: true },
   category: { type: String, required: true },
   rules: { type: Array, required: true },
@@ -29,6 +29,24 @@ const gameSchema = new mongoose.Schema({
   minBet: { type: Number, required: true },
   maxBet: { type: Number, required: true },
   image: { type: String, required: true }
+},
+{
+  methods: {
+
+  },
+  statics: {
+    async externalSearch (query) {
+      const game: any = await Game.find(query).sort({ name: 1 }).collation({ locale: 'en', caseLevel: true })
+      return game.map((item: any) => {
+        return {
+          "id": item.gameId,
+          "name": item.gameName,
+          "icon": item.image,
+          "category": item.category,
+        }
+      })
+    },
+  }
 });
 
 // gameSchema.plugin(paginate);

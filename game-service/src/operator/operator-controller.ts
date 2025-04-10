@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
-import Operator from '../models/operator-model'
-import Product from '../models/product-model'
+import Operator from './operator-model'
+import Product from '../product/product-model'
 
 export const GetOperators = async (_req: Request, res: Response): Promise<void> => {
     try {

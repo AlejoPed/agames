@@ -1,5 +1,5 @@
 import express from 'express'
-import { GetOperators, RegisterOperator, LoginOperator, UpdateOperator, DeleteOperator } from '../controllers/operator-controller'
+import { GetOperators, RegisterOperator, LoginOperator, UpdateOperator, DeleteOperator } from './operator-controller'
 import { auth } from '../middlewares/auth-middleware'
 
 

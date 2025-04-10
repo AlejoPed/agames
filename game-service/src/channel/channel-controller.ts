@@ -1,4 +1,4 @@
-import Channel from '../models/channel-model'
+import Channel from './channel-model'
 import { Request, Response } from 'express'
 
 export const GetChannels = async (_req: Request, res: Response): Promise<void> => {
