@@ -15,16 +15,3 @@ export const GetGames = async (_req: Request, res: Response): Promise<void> => {
         res.status(400).json({ err })
     }
 }
-
-export const GetSession = async (_req: Request, res: Response): Promise<void> => {
-    try {
-        //req.query => operatorId, channelId, gameId, 
-
-        const Products = await Product.find({})
-        const Games = await Game.find({})
-
-        res.status(200).json({ Products,Games })
-    } catch (err) {
-        res.status(400).json({ err })
-    }
-}
