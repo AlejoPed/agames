@@ -10,6 +10,7 @@
             "/get_channels",
             "/delete_channel",
             "/get_products",
+            "/register_product",
             "/enable_products",
             "/disable_products",
             "/get_games",
@@ -27,26 +28,11 @@
             "/update_players",
             "/search_players",
             "/register_player",
-            "/api-docs",
-            "/wallet/get_transactions",
-            "/create_custom_brand",
-            "/edit_custom_brand",
-            "/delete_custom_brand"
+            "/api-docs"
         ]
     },
     "support": {
         "access": [
-            "/enable_brands",
-            "/disable_brands",
-            "/get_brands",
-            "/new_casino_view",
-            "/edit_casino_view",
-            "/delete_casino_view",
-            "/get_casino_brands",
-            "/get_casino_games",
-            "/edit_games_tags",
-            "/edit_game",
-            "/add_game",
             "/search_players",
             "/wallet/get_transactions"
         ]

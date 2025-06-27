@@ -14,12 +14,12 @@ import mongoose from 'mongoose';
 const productSchema = new mongoose.Schema({
   productId: { type: Number, required: true, unique: true, immutable: true },
   category: { type: String, required: true },
-  games: { type: Array, required: true },
-  active: { type: Boolean, required: true },
-  bet: { type: Number, required: true },
-  win: { type: Number, required: true },
-  description: { type: String, required: true },
-  image: { type: String, required: true }
+  games: { type: Array, required: false },
+  active: { type: Boolean, required: false, default: true },
+  bet: { type: Number, required: false },
+  win: { type: Number, required: false },
+  description: { type: String, required: false },
+  image: { type: String, required: false }
 },
 {
   methods: {

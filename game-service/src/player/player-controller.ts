@@ -5,10 +5,10 @@ import 'dotenv/config'
 ///controllers
 
 ///CREATE SESSION
-export const GetSession = async (_req: Request, res: Response): Promise<void> => {
+export const GetSession = async (req: Request, res: Response): Promise<void> => {
     try {
         //req.query => operatorId, channelId, gameId, languaje, playerId
-        const { operatorId, channelId, gameId, languaje, playerId } = _req.query
+        const { operatorId, channelId, gameId, languaje, playerId } = req.query
         
         if (!operatorId || !channelId || !gameId || !languaje || !playerId) {
             res.status(400).json({ error: 'Missing required parameters' })

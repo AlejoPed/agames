@@ -22,17 +22,17 @@ const playerSchema = new mongoose.Schema({
   playerId: { type: Number, required: true, unique: true, immutable: true },
   extId: { type: Number, required: true },
   name: { type: String, required: true },
-  operatorId: { type: Number, required: true },
-  channelId: { type: Number, required: true },
-  currencies: { type: Object, required: true },
-  language: { type: String, required: true },
-  lastBalance: { type: Number, required: true },
-  bet: { type: Number, required: true },
-  win: { type: Number, required: true },
-  gameHistory: { type: Array, required: true },
-  gameStatus: { type: String, required: true },
-  gameNext: { type: String, required: true },
-  gameReport: { type: Number, required: true }
+  operatorId: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'Operators' },
+  channelId: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'Channels' },
+  currencies: { type: Object, required: false },
+  language: { type: String, required: false },
+  lastBalance: { type: Number, required: false },
+  bet: { type: Number, required: false },
+  win: { type: Number, required: false },
+  gameHistory: { type: Array, required: false },
+  gameStatus: { type: String, required: false },
+  gameNext: { type: String, required: false },
+  gameReport: { type: Number, required: false }
 });
 
 playerSchema.plugin(paginate);

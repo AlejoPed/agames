@@ -8,15 +8,15 @@ import { OperatorData } from '../types';
 const operatorSchema = new mongoose.Schema({
   operatorId: { type: Number, required: true, unique: true, immutable: true },
   operatorName: { type: String, required: true },
-  publicKey: { type: String, required: true },
+  publicKey: { type: String, required: false },
   role: { type: String, required: true },
-  currencies: { type: Object, required: true },
-  players: { type: Number, required: true },
-  channels: { type: Object, required: true },
-  bet: { type: Number, required: true },
-  win: { type: Number, required: true },
-  active: { type: Boolean, required: true },
-  accountEnv: { type: String, required: true },
+  currencies: { type: Object, required: false },
+  players: { type: Number, required: false },
+  channels: { type: Object, required: false },
+  bet: { type: Number, required: false },
+  win: { type: Number, required: false },
+  active: { type: Boolean, required: true, default: true },
+  accountEnv: { type: String, required: true, default: 'sandbox', enum: ['sandbox', 'production'] },
   products: [{
     _id: { type: mongoose.Schema.Types.ObjectId, ref: 'Products' }, // Ahora guarda el _id de Mongo
     productId: { type: Number, required: true },
@@ -25,9 +25,9 @@ const operatorSchema = new mongoose.Schema({
   }],
   tokens: [{ token: { type: String, required: true } }],
   password: { type: String, required: true },
-  bannedGames: { type: Array, default: [] },
+  bannedGames: { type: Array, default: [], },
   bannedProducts: { type: Array, default: [] },
-  promos: { type: Object, required: true }
+  promos: { type: Object, required: false }
 },
 {
   methods: {

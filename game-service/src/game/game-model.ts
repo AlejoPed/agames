@@ -1,4 +1,3 @@
-import { lang } from 'moment';
 import mongoose from 'mongoose';
 // import paginate from 'mongoose-paginate-v2';
 
@@ -18,6 +17,7 @@ import mongoose from 'mongoose';
 const gameSchema = new mongoose.Schema({
   gameId: { type: Number, required: true, unique: true, immutable: true },
   gameName: { type: String, required: true, unique: true, immutable: true },
+  productId: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'Products' },
   languages: { type: Array, required: true },
   category: { type: String, required: true },
   rules: { type: Array, required: true },

@@ -15,3 +15,14 @@ export const GetGames = async (_req: Request, res: Response): Promise<void> => {
         res.status(400).json({ err })
     }
 }
+
+export const RegisterGame = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const game = new Game(req.body)
+        await game.save()
+        res.status(201).json(game)
+    } catch (err) {
+        console.log(err)
+        res.status(400).json({ err })
+    }
+}

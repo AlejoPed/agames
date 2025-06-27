@@ -15,16 +15,16 @@ import mongoose from 'mongoose';
 
 const channelSchema = new mongoose.Schema({
   channelId: { type: Number, required: true, unique: true, immutable: true },
-  operatorId: { type: Number, required: true },
+  operatorId: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'Operators' },
   name: { type: String, required: true },
-  players: { type: Number, required: true },
-  rtp: { type: Object, required: true },
-  bet: { type: Number, required: true },
-  active: { type: Boolean, required: true },
-  win: { type: Number, required: true },
-  onPlayers: { type: Number, required: true },
+  players: { type: Number, required: false },
+  rtp: { type: Object, required: false },
+  bet: { type: Number, required: false },
+  active: { type: Boolean, required: true, default: true },
+  win: { type: Number, required: false },
+  onPlayers: { type: Number, required: false },
   ipAddress: { type: Array, default: [] },
-  walletUrl: { type: Array, default: [] }
+  walletUrl: { type: String, required: false },
 });
 
 // channelSchema.plugin(paginate);
